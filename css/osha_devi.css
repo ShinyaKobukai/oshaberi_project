@@ -9,13 +9,20 @@ body{
 	background-size: cover;
 	/*background-size: 100px 100px;*/
 	background-repeat: no-repeat;
-	background-color:rgba(255,255,255,0.8);
+	/*background-color:rgba(255,255,255,0.8);*/
+	background-color: #2f4f4f;
 	background-blend-mode:lighten;
-	background-image: url("../img/devil.gif");
+	/*background-image: url("../img/devil.gif");*/
 }
 
 footer{
 	text-align: center;
+}
+
+#cp{
+	background-color: #1e90ff;
+	border-radius: 5px;
+	padding-right:auto;
 }
 
 #c_mes{
@@ -46,7 +53,6 @@ footer{
 
 #p_list_ctrl{
 	display: grid;
-
 }
 
 #devil_gif{
@@ -63,4 +69,50 @@ footer{
 
 .audio{
 	text-align: center;
+}
+#cp{
+	padding:3px ;
+	margin-bottom:1rem;
+	background-color: #fbca4d;
+}
+
+#c_cmd{
+	margin-bottom: 1rem;
+}
+
+#c_dis{
+	background-color: #FFFF99;
+	border-radius: 10px;
+	padding: 10px;
+	margin-bottom: 1rem;
+}
+
+#c_word_list{
+	display: flex;
+}
+
+#devi_s{
+	padding: 10px;
+	padding-right: 3rem;
+	background-color: #87ceeb;
+	border-radius: 10px;
+}
+
+#tig_s{
+	padding: 10px;
+	padding-right: 3rem;
+	background-color: #fbca4d;
+	border-radius: 10px;
+}
+
+#cas_s{
+	padding-right: 3rem;
+	background-color: #e6e6fa;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+#v_name{
+	background-color: white;
+	border-radius: 5px;
 }
