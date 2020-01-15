@@ -1,5 +1,7 @@
 h1{
 	text-align: center;
+	background-color: #B1F9D0; 
+	border-radius: 10px;
 }
 
 body{
@@ -24,11 +26,12 @@ footer{
 #text{
 	margin-bottom: 10px;
 	text-align: center;
-	margin-left: 3rem; 
 }
 
 .p_list{
 	justify-content: center;
+	background-color: #B1F9D0;
+	border-radius: 10px;
 }
 
 #p_list_w{
