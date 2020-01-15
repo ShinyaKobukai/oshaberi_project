@@ -1,6 +1,6 @@
 h1{
 	text-align: center;
-	background-color: #B1F9D0; 
+	background-color: #B1F9D0A3; 
 	border-radius: 10px;
 }
 
@@ -30,7 +30,7 @@ footer{
 
 .p_list{
 	justify-content: center;
-	background-color: #B1F9D0;
+	background-color: #B1F9D0A3;
 	border-radius: 10px;
 }
 
