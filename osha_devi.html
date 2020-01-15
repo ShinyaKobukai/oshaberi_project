@@ -7,7 +7,7 @@
 </head>
 <body>
 	<h1>おしゃべりデビルマン</h1>
-	<div id="c_mes">ここにしゃべらせる内容を書いてください</div>
+	<!-- <div id="c_mes">ここにしゃべらせる内容を書いてください</div> -->
 	<form name="form1">
 		<!-- <input type="text" name="word" value="" id="word" /> -->
 		<div id="text">
@@ -44,6 +44,45 @@
 		</div>
 	</div>
 
+
+	<div id="c_dis">
+		<div class="c_cmd">
+				<p>実はテキスト内でのコマンド入力で面白いことができます。以下をコピペしてしゃべらせてみてください</p>
+				<div id="cp">dおはようcこんにちはtこんばんは</div>
+		</div>
+		<p>コマンド一覧と詳細</p>
+		<p>d:デビルマンモード　c:キャシャーンモード　t:タイガーマスクモード</p>
+		<p>上記は頭のアルファベットから最後の文字までか、次にキャラクターのコマンドがくるまで指定したキャラクターのボイスでおしゃべりできるコマンドです。</p>
+		<p>例文:　dたのしいcおはなしtわあいわあい　等</p>
+	</div>
+
+	<div id="c_word_list">
+		<div id="devi_s">
+			<div id="v_name">デビルマンショートカットボイスコマンド</div></p>
+			<p>h:あ～</p>
+			<p>s:です</p>
+			<p>m:マン（短い）</p>
+			<p>l:マン（長い）</p>
+			<p>v:デビルマン</p>
+		</div>
+		<div id="cas_s">
+			<div id="v_name">キャシャーンショートカットボイスコマンド</div></p>
+			<p>h:あ～</p>
+			<p>s:です</p>
+			<p>m:マン（短い）</p>
+			<p>l:マン（長い）</p>
+			<p>v:デビルマン</p>
+		</div>
+		<div id="tig_s">
+			<div id="v_name">タイガーマスクショートカットボイスコマンド</div></p>
+			<p>h:あ～</p>
+			<p>s:です</p>
+			<p>m:マン（短い）</p>
+			<p>l:マン（長い）</p>
+			<p>v:デビルマン</p>
+		</div>
+
+	</div>
 
 	<!-- ここからおしゃべり機能 -->
 	<script type="text/javascript">
@@ -84,7 +123,7 @@
 						console.log(ar_word[i]);
 						console.log(src[i]);
 					}
-					//dが入力されたときの処理
+					//デビルマンモード
 					if(ar_word[i]=="d"){
 						root_src = "devil_word/";
 						del_target = "d";
@@ -94,6 +133,7 @@
 						console.log(ar_word[i]);
 						console.log(src[i]);
 					}
+					//タイガーマスクモード
 					if(ar_word[i]=="t"){
 						root_src = "tiger_word/"; 
 						del_target = "t";
@@ -103,6 +143,7 @@
 						console.log(ar_word[i]);
 						console.log(src[i]);
 					}
+					//キャシャーンモード
 					if(ar_word[i]=="c"){
 						root_src = "casha_word/"; 
 						del_target = "c";
@@ -147,7 +188,7 @@
 		<!-- <div id="devil_gif">
 			<img src="img/devil.gif" height="auto" width="30%">
 		</div> -->
-		<a href="osha_kyasha.html">おしゃべりキャシャーン</a>
+		<!-- <a href="osha_kyasha.html">おしゃべりキャシャーン</a> -->
 	</footer>
 </body>
 </html>
