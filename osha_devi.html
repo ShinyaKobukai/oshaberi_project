@@ -12,50 +12,36 @@
 		<!-- <input type="text" name="word" value="" id="word" /> -->
 		<div id="text">
 			<textarea name="word" rows="4" cols="40" id="word">ここにきにうしてくたさい</textarea>
+			<br>
 			<input type="button" value="発声" onclick="clickBtn();" />
 		</div>
 	</form>
 
 	<div class ="p_list">
-<!--		<div id="p_list_w">-->
-<!--			<div id="word_1_ah">あ～</div> 	-->
-<!--			<div id="word_2_man">マン(短い)</div>	-->
-<!--			<div id="word_3_man_long">マン(長い)</div> 	-->
-<!--			<div id="word_4_desu">です</div>-->
-<!--			<div id="word_5_devilman">デビルマン</div>-->
-<!--		</div>-->
+		<div class="box">
+			<div class="word">あ～</div>
+			<div class="audio"><audio src="devil_word/ah.wav" controls></audio></div>
+		</div>
 
-<!--		<div id="p_list_ctrl">-->
-<!--			<div id="word_1_ah_wav"><audio src="r_word/ah.wav" controls></audio></div>-->
-<!--			<div id="word_2_man_wav"><audio src="r_word/man.wav" controls></audio></div>-->
-<!--			<div id="word_3_man_long_wav"><audio src="r_word/man_long.wav" controls></audio></div>-->
-<!--			<div id="word_4_desu_wav"><audio src="r_word/desu.wav" controls></audio></div>-->
-<!--			<div id="word_5_devilman_wav"><audio src="r_word/devilman.wav" controls></audio></div>-->
-<!--		</div>-->
+		<div class="box">
+			<div class="word">マン(短い)</div>
+			<div class="audio"><audio src="devil_word/man.wav" controls></audio></div>
+		</div>
 
-	<div class="box">
-		<div class="word">あ～</div>
-		<div class="audio"><audio src="devil_word/ah.wav" controls></audio></div>
-	</div>
+		<div class="box">
+			<div class="word">マン(長い)</div>
+			<div class="audio"><audio src="devil_word/man_long.wav" controls></audio></div>
+		</div>
 
-	<div class="box">
-		<div class="word">マン(短い)</div>
-		<div class="audio"><audio src="devil_word/man.wav" controls></audio></div>
-	</div>
+		<div class="box">
+			<div class="word">です</div>
+			<div class="audio"><audio src="devil_word/desu.wav" controls></audio></div>
+		</div>
 
-	<div class="box">
-		<div class="word">マン(長い)</div>
-		<div class="audio"><audio src="devil_word/man_long.wav" controls></audio></div>
-	</div>
-
-	<div class="box">
-		<div class="word">です</div>
-		<div class="audio"><audio src="devil_word/desu.wav" controls></audio></div>
-	</div>
-
-	<div class="box">
-		<div class="word">デビルマン</div>
-		<div class="audio"><audio src="devil_word/devilman.wav" controls></audio></div>
+		<div class="box">
+			<div class="word">デビルマン</div>
+			<div class="audio"><audio src="devil_word/devilman.wav" controls></audio></div>
+		</div>
 	</div>
 
 
@@ -97,7 +83,6 @@
 						src[i] = "devil_word/su.wav";
 						console.log(ar_word[i]);
 						console.log(src[i]);
-						// break;
 					}
 					//dが入力されたときの処理
 					if(ar_word[i]=="d"){
@@ -108,7 +93,6 @@
 						});
 						console.log(ar_word[i]);
 						console.log(src[i]);
-						// break;
 					}
 					if(ar_word[i]=="t"){
 						root_src = "tiger_word/"; 
@@ -118,7 +102,6 @@
 						});
 						console.log(ar_word[i]);
 						console.log(src[i]);
-						// break;
 					}
 					if(ar_word[i]=="c"){
 						root_src = "casha_word/"; 
@@ -128,7 +111,6 @@
 						});
 						console.log(ar_word[i]);
 						console.log(src[i]);
-						// break;
 					}
 					//ローマ字と対応付けする処理
 					for (var j = 0; j < kana_roma.length;) {
@@ -159,7 +141,7 @@
 				audio.loop = false;
 				audio.src = src[0];
 				audio.play();
-			}		
+			}
 	</script>
 	<footer>
 		<!-- <div id="devil_gif">
