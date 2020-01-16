@@ -6,7 +6,7 @@
 	<title>おしゃべりデビルマン</title>
 </head>
 <body>
-	<h1>おしゃべりデビルマン</h1>
+	<h1>おしゃべりターミナル</h1>
 	<!-- <div id="c_mes">ここにしゃべらせる内容を書いてください</div> -->
 	<form name="form1">
 		<!-- <input type="text" name="word" value="" id="word" /> -->
@@ -17,7 +17,7 @@
 		</div>
 	</form>
 
-	<div class ="p_list">
+	<!-- <div class ="p_list">
 		<div class="box">
 			<div class="word">あ～</div>
 			<div class="audio"><audio src="devil_word/ah.wav" controls></audio></div>
@@ -43,22 +43,30 @@
 			<div class="audio"><audio src="devil_word/devilman.wav" controls></audio></div>
 		</div>
 	</div>
-
+ -->
 
 	<div id="c_dis">
 		<div class="c_cmd">
 				<p>実はテキスト内でのコマンド入力で面白いことができます。以下をコピペしてしゃべらせてみてください</p>
-				<div id="cp">dおはようcこんにちはtこんばんは</div>
+				<!-- <div id="cp">dあいうえおcあいうえおtあいうえお</div> -->
+				<p>dあいうえおcあいうえおtあいうえお</p>
 		</div>
+		<hr>
 		<p>コマンド一覧と詳細</p>
 		<p>d:デビルマンモード　c:キャシャーンモード　t:タイガーマスクモード</p>
-		<p>上記は頭のアルファベットから最後の文字までか、次にキャラクターのコマンドがくるまで指定したキャラクターのボイスでおしゃべりできるコマンドです。</p>
+		<p>上記は頭のアルファベットから最後の文字までか、次にキャラクターのコマンドがくるまで指定したキャラクターのボイスでおしゃべりできるコマンドです。何も指定しなければデビルマンでおしゃべりします。指定しなければキャシャーンとタイガーマスクはおしゃべりしません。</p>
 		<p>例文:　dたのしいcおはなしtわあいわあい　等</p>
+		<hr>
+		<p>また、定型文のショートカットコマンドはキャラクターモードに依存しているので、例えばデビルマンでお話しした後にキャシャーンのショートカットコマンドを使いたいときはc(任意のショートカットコマンドの英字)と必ずcを噛ませてください</p>
+		<p>例文:　dvsck</p>
+		<p>（デビルマンです。ピキーン）</p>
+		<div id="daiji">また、全角空白で1秒の待機を実装しています。これに関してのキャラクターモードの依存はありません。</div>
 	</div>
 
 	<div id="c_word_list">
 		<div id="devi_s">
 			<div id="v_name">デビルマンショートカットボイスコマンド</div></p>
+			<hr>
 			<p>h:あ～</p>
 			<p>s:です</p>
 			<p>m:マン（短い）</p>
@@ -67,19 +75,18 @@
 		</div>
 		<div id="cas_s">
 			<div id="v_name">キャシャーンショートカットボイスコマンド</div></p>
-			<p>h:あ～</p>
-			<p>s:です</p>
-			<p>m:マン（短い）</p>
-			<p>l:マン（長い）</p>
-			<p>v:デビルマン</p>
+			<hr>
+			<p>n:いいにおい</p>
+			<p>k:ピキーン</p>
+			<p>p:パンチ</p>
+			<p>r:ドラムロール</p>
+			<p>f:たのしい</p>
 		</div>
 		<div id="tig_s">
 			<div id="v_name">タイガーマスクショートカットボイスコマンド</div></p>
-			<p>h:あ～</p>
-			<p>s:です</p>
-			<p>m:マン（短い）</p>
-			<p>l:マン（長い）</p>
-			<p>v:デビルマン</p>
+			<hr>
+			<p>y:マスク（短い）</p>
+			<p>g:マスク（長い）</p>
 		</div>
 
 	</div>
@@ -91,7 +98,7 @@
 			document.getElementById("word").textContent = word;
 			//一文字ずつar_wordにひらがなを格納して配列を回す
 			var ar_word = Array.from(word);
-			//かなとローマ字の対応表
+			//かなとローマ字の対応表とショートカットコマンドの対応付け
 			var kana_roma = [
 				"あ","a","い","i","う","u","え","e","お","o",
 				"か","ka","き","ki","く","ku","け","ke","こ","ko",
@@ -102,7 +109,14 @@
 				"ま","ma","み","mi","む","mu","め","me","も","mo",
 				"や","ya","ゆ","yu","よ","yo",
 				"ら","ra","り","ri","る","ru","れ","re","ろ","ro",
-				"わ","wa","を","wo","ん","n","　","d","c","t",
+				"わ","wa","を","wo","ん","n",
+				//ここからショートカットコマンド
+				//デビルマン
+				"　","kuhaku","h","ah","s","desu","m","man","l","man_long","v","devilman",
+				//キャシャーン
+				"　","kuhaku","n","iinioi","k","pikin","p","panchi","r","dram","f","tanoshi",
+				//タイガーマスク
+				"　","kuhaku","y","mask","g","mask_long",
 				];
 			//ソースの格納配列の用意
 			var src = new Array;
@@ -117,31 +131,23 @@
 			//1文字ずつ切り分けた分を配列を回す処理
 			for (var i = 0; i<ar_word.length; i++) {
 					console.log(ar_word[i]);
-					//全角空白が入力された際の処理
-					if(ar_word[i]=="　"){
-						src[i] = "devil_word/su.wav";
-						console.log(ar_word[i]);
-						console.log(src[i]);
-					}
 					//デビルマンモード
 					if(ar_word[i]=="d"){
 						root_src = "devil_word/";
-						del_target = "d";
+						del_target = ar_word[i];
 						ar_word.some(function(v, i){
 						    if (v==del_target) ar_word.splice(i,1);    
 						});
-						console.log(ar_word[i]);
-						console.log(src[i]);
+						console.log("デビルモード");
 					}
 					//タイガーマスクモード
 					if(ar_word[i]=="t"){
 						root_src = "tiger_word/"; 
-						del_target = "t";
+						del_target = ar_word[i];
 						ar_word.some(function(v, i){
 						    if (v==del_target) ar_word.splice(i,1);    
 						});
-						console.log(ar_word[i]);
-						console.log(src[i]);
+						console.log("タイガーモード");
 					}
 					//キャシャーンモード
 					if(ar_word[i]=="c"){
@@ -150,10 +156,9 @@
 						ar_word.some(function(v, i){
 						    if (v==del_target) ar_word.splice(i,1);    
 						});
-						console.log(ar_word[i]);
-						console.log(src[i]);
+						console.log("キャシャーンモード");
 					}
-					//ローマ字と対応付けする処理
+					//ローマ字と対応付けする処理とソースの作成から格納
 					for (var j = 0; j < kana_roma.length;) {
 						if (ar_word[i]==kana_roma[j]) {
 							//ローマ字の特定
