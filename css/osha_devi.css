@@ -1,7 +1,15 @@
 h1{
 	text-align: center;
 	background-color: #B1F9D0A3; 
-	border-radius: 10px;
+	border-radius: 5px;
+}
+
+textarea{
+	width: 100%
+}
+
+input{
+	right:0; 
 }
 
 body{
@@ -10,7 +18,8 @@ body{
 	/*background-size: 100px 100px;*/
 	background-repeat: no-repeat;
 	/*background-color:rgba(255,255,255,0.8);*/
-	background-color: #2f4f4f;
+	/*background-color: #2f4f4f;*/
+	background-color: #FFFF;
 	background-blend-mode:lighten;
 	/*background-image: url("../img/devil.gif");*/
 }
@@ -38,7 +47,7 @@ footer{
 .p_list{
 	justify-content: center;
 	background-color: #B1F9D0A3;
-	border-radius: 10px;
+	border-radius: 50px;
 }
 
 #p_list_w{
@@ -82,7 +91,7 @@ footer{
 
 #c_dis{
 	background-color: #FFFF99;
-	border-radius: 10px;
+	border-radius: 5px;
 	padding: 10px;
 	margin-bottom: 1rem;
 }
@@ -93,26 +102,31 @@ footer{
 
 #devi_s{
 	padding: 10px;
-	padding-right: 3rem;
+	width: 33%;
 	background-color: #87ceeb;
-	border-radius: 10px;
+	border-radius: 5px;
 }
 
 #tig_s{
 	padding: 10px;
-	padding-right: 3rem;
+	width: 33%;
 	background-color: #fbca4d;
-	border-radius: 10px;
+	border-radius: 5px;
 }
 
 #cas_s{
-	padding-right: 3rem;
-	background-color: #e6e6fa;
 	padding: 10px;
-	border-radius: 10px;
+	width: 33%;
+	background-color: #e6e6fa;
+	border-radius: 5px;
 }
 
-#v_name{
+/*#v_name{
 	background-color: white;
+	border-radius: 5px;
+}*/
+
+#daiji{
+	background-color: #ffa500;
 	border-radius: 5px;
 }
