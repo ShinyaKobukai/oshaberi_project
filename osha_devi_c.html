@@ -136,7 +136,7 @@
 						root_src = "devil_word/";
 						del_target = ar_word[i];
 						ar_word.includes(function(v, i){
-						    if (v==del_target) ar_word.splice(i,1);    
+						    if (v==del_target) ar_word.splice(i,1,null);    
 						});
 						console.log("デビルモード");
 					}
@@ -145,7 +145,7 @@
 						root_src = "tiger_word/"; 
 						del_target = ar_word[i];
 						ar_word.includes(function(v, i){
-						    if (v==del_target) ar_word.splice(i,1);    
+						    if (v==del_target) ar_word.splice(i,1,null);    
 						});
 						console.log("タイガーモード");
 						console.log(ar_word);
@@ -155,7 +155,7 @@
 						root_src = "casha_word/"; 
 						del_target = ar_word[i];
 						ar_word.includes(function(v, i){
-						    if (v==del_target) ar_word.splice(i,1);    
+						    if (v==del_target) ar_word.splice(i,1,null);    
 						});
 						console.log("キャシャーンモード");
 					}
@@ -177,16 +177,19 @@
 						j+=2;
 					}
 				}
+				//配列をフィルターで余計なものを濾す
+				var new_src = src.filter(function(x){
+					return !(x === null || x === undefined || x === ""); 
+				})
 				//srcに入れたソースを配列を回しながら再生
 				var audio = new Audio(),k = 0;
 				audio.addEventListener('ended', function () {
-					k = ++k < src.length ? k : src.length;
-					console.log(src)
-					audio.src = src[k];
+					k = ++k < new_src.length ? k : new_src.length;
+					audio.src = new_src[k];
 					audio.play();
 				},true);
 				audio.loop = false;
-				audio.src = src[0];
+				audio.src = new_src[0];
 				audio.play();
 			}
 	</script>
